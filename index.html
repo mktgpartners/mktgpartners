@@ -3,47 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Amazon-Like Website</title>
+    <title>Your Professional Website</title>
     <style>
-        /* Your existing styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #555;
+            padding: 0.5em;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 1em;
+            margin: 0 1em;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+        }
+
+        section.hero {
+            background: url('your-hero-image.jpg') center/cover no-repeat;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+        }
+
+        section {
+            padding: 2em;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Your Amazon-Like Website</h1>
+        <h1>Your Professional Website</h1>
     </header>
     
     <nav>
-        <a href="#" onclick="scrollToSection('section1')">Category 1</a>
-        <a href="#" onclick="scrollToSection('section2')">Category 2</a>
-        <a href="#" onclick="scrollToSection('section3')">Category 3</a>
-        <!-- Add more category links as needed -->
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
     </nav>
 
-    <section id="section1">
-        <h2>Category 1</h2>
-        <p>Your content for Category 1 goes here.</p>
+    <section class="hero">
+        <h2>Welcome to Your Website</h2>
+        <p>This is a professional and modern template. Customize it to meet your specific needs.</p>
     </section>
 
-    <section id="section2">
-        <h2>Category 2</h2>
-        <p>Your content for Category 2 goes here.</p>
+    <section>
+        <h2>About Us</h2>
+        <p>Learn more about our company and team.</p>
     </section>
 
-    <section id="section3">
-        <h2>Category 3</h2>
-        <p>Your content for Category 3 goes here.</p>
+    <section>
+        <h2>Our Services</h2>
+        <p>Explore the services we offer to our clients.</p>
     </section>
 
-    <!-- Add more sections as needed -->
+    <section>
+        <h2>Contact Us</h2>
+        <p>Reach out to us for any inquiries or collaboration.</p>
+    </section>
 
-    <script>
-        function scrollToSection(sectionId) {
-            const section = document.getElementById(sectionId);
-            if (section) {
-                section.scrollIntoView({ behavior: 'smooth' });
-            }
-        }
-    </script>
+    <footer>
+        &copy; 2024 Your Company Name. All rights reserved.
+    </footer>
 </body>
 </html>
