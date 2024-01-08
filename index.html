@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Professional Website</title>
+    <title>Your Stylish Website</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -22,10 +22,13 @@
         }
 
         nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #555;
             display: flex;
             justify-content: center;
-            background-color: #555;
-            padding: 0.5em;
+            z-index: 1000;
         }
 
         nav a {
@@ -40,18 +43,9 @@
             color: #ffd700;
         }
 
-        section.hero {
-            background: url('your-hero-image.jpg') center/cover no-repeat;
-            height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            text-align: center;
-        }
-
         section {
             padding: 2em;
+            text-align: center;
         }
 
         h2 {
@@ -71,32 +65,32 @@
 </head>
 <body>
     <header>
-        <h1>Your Professional Website</h1>
+        <h1>Your Stylish Website</h1>
     </header>
     
     <nav>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Contact</a>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
     </nav>
 
-    <section class="hero">
+    <section id="home">
         <h2>Welcome to Your Website</h2>
-        <p>This is a professional and modern template. Customize it to meet your specific needs.</p>
+        <p>This is a stylish and modern website template. Scroll down to explore more.</p>
     </section>
 
-    <section>
+    <section id="about">
         <h2>About Us</h2>
         <p>Learn more about our company and team.</p>
     </section>
 
-    <section>
+    <section id="services">
         <h2>Our Services</h2>
         <p>Explore the services we offer to our clients.</p>
     </section>
 
-    <section>
+    <section id="contact">
         <h2>Contact Us</h2>
         <p>Reach out to us for any inquiries or collaboration.</p>
     </section>
@@ -104,39 +98,23 @@
     <footer>
         &copy; 2024 Your Company Name. All rights reserved.
     </footer>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <!-- Your head content -->
-</head>
-<body>
-    <!-- Your existing HTML content -->
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Smooth scroll to target section
-            function scrollToSection(targetId) {
-                const targetSection = document.getElementById(targetId);
-                if (targetSection) {
-                    window.scrollTo({
-                        top: targetSection.offsetTop,
-                        behavior: 'smooth'
-                    });
-                }
-            }
-
-            // Add click event listeners to navigation links
             document.querySelectorAll('nav a').forEach(link => {
                 link.addEventListener('click', function(event) {
                     event.preventDefault();
                     const targetId = this.getAttribute('href').substring(1);
-                    scrollToSection(targetId);
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        window.scrollTo({
+                            top: targetSection.offsetTop - document.querySelector('nav').offsetHeight,
+                            behavior: 'smooth'
+                        });
+                    }
                 });
             });
         });
     </script>
-</body>
-</html>
-
 </body>
 </html>
