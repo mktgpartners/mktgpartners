@@ -3,37 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>Meine verbesserte Webseite</title>
-  <style>
-    body {
-      background-color: #ffffff; /* Hintergrundfarbe des Body */
-      margin: 0; /* Entfernt den Standardabstand des Body */
-    }
-    /* Stil für den Header */
-    header {
-      text-align: center;
-      background-color: #999999;
-      width: 1000px;
-      margin: 0 auto; /* Zentriert den Header */
-    }
-    /* Stil für die Navigationslinks */
-    header a {
-      display: inline-block;
-      padding: 10px 20px;
-      text-decoration: none;
-    }
-    /* Stil für die einzelnen Abschnitte */
-    section {
-      text-align: center;
-      padding: 20px;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
   <header>
-    <a href="#aboutUs">About Us</a>
-    <a href="#contactUs">Contact Us</a>
-    <a href="#CEO">CEO</a>
+    <nav>
+      <a href="#aboutUs">About Us</a>
+      <a href="#contactUs">Contact Us</a>
+      <a href="#CEO">CEO</a>
+    </nav>
   </header>
 
   <main>
@@ -62,6 +41,35 @@
       </ul>
     </nav>
   </footer>
+  body {
+  background-color: #ffffff;
+  margin: 0;
+}
+
+header {
+  text-align: center;
+  background-color: #999999;
+  padding: 10px 0;
+}
+
+header nav a {
+  display: inline-block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: black;
+}
+
+main {
+  text-align: center;
+  padding: 20px;
+}
+
+section {
+  padding: 20px;
+}
+
 
 </body>
 </html>
+
+
