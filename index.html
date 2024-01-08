@@ -19,6 +19,7 @@
             color: #fff;
             padding: 1em;
             text-align: center;
+            z-index: 2; /* Adjusted z-index to appear above the fixed navigation bar */
         }
 
         nav {
@@ -28,7 +29,7 @@
             background-color: #555;
             display: flex;
             justify-content: center;
-            z-index: 1000;
+            z-index: 1; /* Adjusted z-index to be below the header */
         }
 
         nav a {
@@ -46,7 +47,11 @@
         section {
             padding: 4em 2em;
             text-align: center;
-            margin-top: 60px; /* Adjusted margin to provide space for fixed navigation */
+            margin-top: 60px;
+        }
+
+        h1 {
+            margin: 0; /* Remove default margin for h1 */
         }
 
         h2 {
