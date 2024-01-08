@@ -2,36 +2,81 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>SMMA Template - Home</title>
-  <!-- Styles hier einfügen -->
+  <title>SMMA Template</title>
   <style>
-    /* ... dein CSS-Stil hier ... */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    .page {
+      display: none;
+      background-color: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .active {
+      display: block;
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px 0;
+      background-color: #333;
+      color: #fff;
+    }
   </style>
 </head>
 <body>
 
-  <header>
-    <nav>
-      <ul>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="testimonials.html">Testimonials</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
   <main>
-    <section id="home">
-      <h1>Welcome to our SMMA!</h1>
-      <p>Click on the links above to explore.</p>
-    </section>
+    <div class="page active" id="page1">
+      <h2>Page 1</h2>
+      <p>This is Page 1 content.</p>
+      <a href="#" onclick="nextPage()">Next Page</a>
+    </div>
+
+    <div class="page" id="page2">
+      <h2>Page 2</h2>
+      <p>This is Page 2 content.</p>
+      <a href="#" onclick="prevPage()">Previous Page</a>
+    </div>
+
+    <div class="page" id="page3">
+      <h2>Page 3</h2>
+      <p>This is Page 3 content.</p>
+      <a href="#" onclick="prevPage()">Previous Page</a>
+    </div>
   </main>
 
   <footer>
     <p>&copy; 2024 SMMA. All Rights Reserved.</p>
   </footer>
 
+  <script>
+    let currentPage = 1;
+
+    function nextPage() {
+      document.getElementById(`page${currentPage}`).classList.remove('active');
+      currentPage++;
+      if (currentPage > 3) {
+        currentPage = 1;
+      }
+      document.getElementById(`page${currentPage}`).classList.add('active');
+    }
+
+    function prevPage() {
+      document.getElementById(`page${currentPage}`).classList.remove('active');
+      currentPage--;
+      if (currentPage < 1) {
+        currentPage = 3;
+      }
+      document.getElementById(`page${currentPage}`).classList.add('active');
+    }
+  </script>
+
 </body>
 </html>
-
