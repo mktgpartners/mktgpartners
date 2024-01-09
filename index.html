@@ -9,16 +9,21 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
+            background-color: #f7f7f7;
             color: #333;
             line-height: 1.6;
+         
+            background-image: url('bg.jpg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
         }
 
         header, footer {
-            background-color: #3498db;
+            background-color: #37474f;
             color: #fff;
             padding: 1em;
             text-align: center;
@@ -28,51 +33,43 @@
 
         nav {
             position: fixed;
-            left: 0; /* Verändert die Navigationsposition zur linken Seite */
             top: 0;
-            height: 100%;
-            width: 200px; /* Breite der Navigationsleiste */
-            background-color: #2980b9;
+            width: 100%;
+            background-color: #78909c;
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            justify-content: center;
             z-index: 1;
-            transition: width 0.5s; /* Animation für die Breitenänderung */
-            overflow-y: auto; /* Scrollbar hinzufügen, wenn die Höhe der Navigation den Viewport überschreitet */
+            transition: top 0.5s;
         }
 
         nav a {
             color: #fff;
             text-decoration: none;
             padding: 1em;
-            margin: 0.5em 0;
+            margin: 0 1em;
             transition: color 0.3s ease;
-            background-color: #2980b9; /* Hintergrundfarbe der Navigationslinks */
-            border-radius: 5px;
         }
 
         nav a:hover {
-            color: #ecf0f1;
-            background-color: #34495e; /* Ändert Hover-Hintergrundfarbe */
+            color: #b0bec5;
         }
 
         main {
-            flex: 1;
+            flex: 1; /* Fill remaining vertical space */
             display: flex;
             flex-direction: column;
-            margin-left: 200px; /* Berücksichtigt die Breite der Navigation */
         }
 
         section {
             padding: 4em 2em;
             text-align: center;
             margin-top: 60px;
-            background-color: #ecf0f1;
-            border-bottom: 1px solid #ccc;
-            pointer-events: none;
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.5s ease, transform 0.5s ease;
+            background-color: #fff;
+            border-bottom: 1px solid #ccc;
+            pointer-events: none;
         }
 
         section.active {
@@ -81,6 +78,7 @@
             pointer-events: auto;
         }
 
+        /* Animationen für die Sektionen */
         section.active {
             animation-name: fadeInUp;
             animation-duration: 1s;
@@ -112,19 +110,7 @@
         }
 
         footer {
-            margin-top: auto;
-        }
-
-        .info-box {
-            border: 2px solid #ccc;
-            padding: 20px;
-            margin: 20px;
-            text-align: center;
-            background-color: #fff; /* Undurchsichtiger Hintergrund für Kästchen */
-        }
-
-        .info-box h3 {
-            margin-top: 0;
+            margin-top: auto; /* Push footer to the bottom */
         }
     </style>
 </head>
@@ -142,11 +128,86 @@
     </nav>
 
     <main>
-        <!-- ... (Unverändert) ... -->
+        <section id="home" class="active">
+            <h2>Welcome to MKTG Partners</h2>
+            <p>Welcome to MKTG Partners, where your success is our priority. Our dedication to delivering outstanding results is at the core of everything we do. Scroll down to explore more.</p>
+        </section>
+
+        <section id="about">
+            <h2>About Us</h2>
+            <p>At MKTG Partners, we pride ourselves on our compelling story and the team of exceptional individuals who make our company great. Learn more about our journey and the values we stand for.</p>
+        </section>
+
+        <section id="services">
+            <h2>Our Services</h2>
+            <p>Discover the breadth of services we offer to cater to the diverse needs of our clients. From strategic consulting to creative solutions, we are committed to delivering excellence.</p>
+        </section>
+
+        <section id="FounderCEO">
+            <h2>Founder & CEO</h2>
+            <p>Meet our visionary Founder and CEO. Learn about their inspiring journey and the driving force behind MKTG Partners' success story.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Get in touch with us at mktgpartners1@gmail.com to explore new business opportunities or to seek more information. Let's create success together!</p>
+        </section>
     </main>
 
     <footer>
         &copy; 2024 MKTG Partners. All rights reserved.
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('nav a');
+            const sections = document.querySelectorAll('section');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const targetId = link.getAttribute('href').substring(1);
+
+                    sections.forEach(section => {
+                        if (section.id === targetId) {
+                            section.classList.add('active');
+                        } else {
+                            section.classList.remove('active');
+                        }
+                    });
+                });
+            });
+
+            function updateActiveSection() {
+                sections.forEach(section => {
+                    const rect = section.getBoundingClientRect();
+                    if (rect.top >= 0 && rect.top <= window.innerHeight) {
+                        section.classList.add('active');
+                    } else {
+                        section.classList.remove('active');
+                    }
+                });
+            }
+
+            document.addEventListener('scroll', updateActiveSection);
+            window.addEventListener('scroll', function() {
+                let currentSectionId = '';
+                sections.forEach(section => {
+                    const rect = section.getBoundingClientRect();
+                    if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+                        currentSectionId = section.id;
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').substring(1) === currentSectionId) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
+
