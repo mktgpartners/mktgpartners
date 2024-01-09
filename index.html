@@ -5,76 +5,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MKTG Partners</title>
     <style>
-        /* ... (dein vorhandener CSS-Code) ... */
-
-        /* Styles für das Informationsfenster */
-        .info-window {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            padding: 20px;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            z-index: 9999;
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
+            line-height: 1.6;
+            background-image: url('bg.jpg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
-        /* Aktive Klasse für das Informationsfenster */
-        .info-window.active {
-            display: block;
+        /* Your existing CSS styles */
+
+        .info-box {
+            border: 2px solid #ccc;
+            padding: 20px;
+            margin: 20px;
+            text-align: center;
+        }
+
+        .info-box h3 {
+            margin-top: 0;
         }
     </style>
 </head>
 <body>
-    <!-- ... (dein vorhandener HTML-Code) ... -->
+    <header>
+        <h1>MKTG Partners</h1>
+    </header>
     
-    <!-- Information Fenster für die Sektionen -->
-    <div id="infoHome" class="info-window">
-        <h3>Home Section</h3>
-        <p>Testinformation für die Home-Sektion.</p>
-    </div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#FounderCEO">Founder & CEO</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
-    <div id="infoAbout" class="info-window">
-        <h3>About Section</h3>
-        <p>Testinformation für die About-Sektion.</p>
-    </div>
+    <main>
+        <section id="home" class="active">
+            <h2>Welcome to MKTG Partners</h2>
+            <p>Welcome to MKTG Partners, where your success is our priority. Our dedication to delivering outstanding results is at the core of everything we do. Scroll down to explore more.</p>
+            <div class="info-box">
+                <h3>Home Information</h3>
+                <p>Some additional information about the Home section.</p>
+            </div>
+        </section>
 
-    <div id="infoServices" class="info-window">
-        <h3>Services Section</h3>
-        <p>Testinformation für die Services-Sektion.</p>
-    </div>
+        <section id="about">
+            <h2>About Us</h2>
+            <p>At MKTG Partners, we pride ourselves on our compelling story and the team of exceptional individuals who make our company great. Learn more about our journey and the values we stand for.</p>
+            <div class="info-box">
+                <h3>About Information</h3>
+                <p>Some additional information about the About section.</p>
+            </div>
+        </section>
 
-    <div id="infoFounderCEO" class="info-window">
-        <h3>Founder & CEO Section</h3>
-        <p>Testinformation für die Founder & CEO-Sektion.</p>
-    </div>
+        <section id="services">
+            <h2>Our Services</h2>
+            <p>Discover the breadth of services we offer to cater to the diverse needs of our clients. From strategic consulting to creative solutions, we are committed to delivering excellence.</p>
+            <div class="info-box">
+                <h3>Services Information</h3>
+                <p>Some additional information about the Services section.</p>
+            </div>
+        </section>
 
-    <div id="infoContact" class="info-window">
-        <h3>Contact Us Section</h3>
-        <p>Testinformation für die Contact Us-Sektion.</p>
-    </div>
+        <section id="FounderCEO">
+            <h2>Founder & CEO</h2>
+            <p>Meet our visionary Founder and CEO. Learn about their inspiring journey and the driving force behind MKTG Partners' success story.</p>
+            <div class="info-box">
+                <h3>Founder & CEO Information</h3>
+                <p>Some additional information about the Founder & CEO section.</p>
+            </div>
+        </section>
 
-    <script>
-        // ... (dein vorhandener JavaScript-Code) ...
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Get in touch with us at mktgpartners1@gmail.com to explore new business opportunities or to seek more information. Let's create success together!</p>
+            <div class="info-box">
+                <h3>Contact Information</h3>
+                <p>Some additional information about the Contact section.</p>
+            </div>
+        </section>
+    </main>
 
-        // JavaScript für das Anzeigen des Informationsfensters
-        document.addEventListener('DOMContentLoaded', function() {
-            const infoWindows = document.querySelectorAll('.info-window');
-            sections.forEach((section, index) => {
-                section.addEventListener('click', function() {
-                    infoWindows.forEach(window => window.classList.remove('active'));
-                    infoWindows[index].classList.add('active');
-                });
-            });
-        });
-    </script>
+    <footer>
+        &copy; 2024 MKTG Partners. All rights reserved.
+    </footer>
 </body>
 </html>
-
-
-
-
-
-
-
