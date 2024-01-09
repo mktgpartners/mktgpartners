@@ -57,13 +57,15 @@
             transform: translateY(20px);
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.5s ease;
+            transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.5s ease, transform-origin 0.5s ease;
+            cursor: pointer;
         }
 
         section.active {
             opacity: 1;
             transform: translateY(0);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transform-origin: center;
         }
 
         h1 {
@@ -180,6 +182,13 @@
                     } else {
                         section.classList.remove('active');
                     }
+                });
+            });
+
+            sections.forEach(section => {
+                section.addEventListener('click', function() {
+                    sections.forEach(s => s.classList.remove('zoom'));
+                    this.classList.toggle('zoom');
                 });
             });
         });
