@@ -5,15 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MKTG Partners</title>
     <style>
-        /* Bestehender CSS-Stil */
-
-        /* Zusätzliche CSS-Stile für neue Abschnitte */
-        section.custom-section {
-            background-color: #f9f9f9;
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
+            line-height: 1.6;
         }
 
-        /* Weitere benutzerdefinierte Stile hier */
+        header, footer {
+            background-color: #37474f;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+            z-index: 2;
+            transition: background-color 0.5s, color 0.5s;
+        }
 
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #78909c;
+            display: flex;
+            justify-content: center;
+            z-index: 1;
+            transition: top 0.5s;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 1em;
+            margin: 0 1em;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #b0bec5;
+        }
+
+        section {
+            padding: 4em 2em;
+            text-align: center;
+            margin-top: 60px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            background-color: #fff;
+            border-bottom: 1px solid #ccc;
+            display: none;
+            pointer-events: none;
+        }
+
+        section.active {
+            opacity: 1;
+            transform: translateY(0);
+            display: block;
+            pointer-events: auto;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            color: #555;
+            font-size: 1.1em;
+        }
     </style>
 </head>
 <body>
@@ -53,19 +117,6 @@
         <h2>Contact Us</h2>
         <p>Get in touch with us at mktgpartners1@gmail.com to explore new business opportunities or to seek more information. Let's create success together!</p>
     </section>
-
-    <!-- Zusätzliche Abschnitte für längeren Code -->
-    <section id="testimonials" class="custom-section">
-        <h2>Client Testimonials</h2>
-        <p>Discover what our clients say about us. Your success story begins here!</p>
-    </section>
-
-    <section id="team" class="custom-section">
-        <h2>Our Amazing Team</h2>
-        <p>Meet the incredible minds behind our success. United by passion, driven by excellence.</p>
-    </section>
-
-    <!-- Weitere Abschnitte und Inhalte hier -->
 
     <footer>
         &copy; 2024 MKTG Partners. All rights reserved.
