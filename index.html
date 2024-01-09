@@ -5,55 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MKTG Partners</title>
     <style>
-        /* Grundlegende Stile */
+        /* Bestehender CSS-Stil */
 
-        /* Animationsstil für Sektionseinführung */
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* Zusätzliche CSS-Stile für neue Abschnitte */
+        section.custom-section {
+            background-color: #f9f9f9;
         }
 
-        /* Stil für Sektionen */
-        section {
-            padding: 4em 2em;
-            text-align: center;
-            margin-top: 60px;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-            background-color: #fff;
-            border-bottom: 1px solid #ccc;
-            pointer-events: none;
-            animation: fadeIn 1s ease forwards;
-        }
+        /* Weitere benutzerdefinierte Stile hier */
 
-        /* Restliche Stile und Code */
-        /* Füge weitere Stile hinzu, falls erforderlich */
     </style>
 </head>
 <body>
-    <!-- Header, Navigation, Sektionen und Footer -->
+    <header>
+        <h1>MKTG Partners</h1>
+    </header>
+    
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#FounderCEO">Founder & CEO</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="home" class="active">
+        <h2>Welcome to MKTG Partners</h2>
+        <p>Welcome to MKTG Partners, where your success is our priority. Our dedication to delivering outstanding results is at the core of everything we do. Scroll down to explore more.</p>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>At MKTG Partners, we pride ourselves on our compelling story and the team of exceptional individuals who make our company great. Learn more about our journey and the values we stand for.</p>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <p>Discover the breadth of services we offer to cater to the diverse needs of our clients. From strategic consulting to creative solutions, we are committed to delivering excellence.</p>
+    </section>
+
+    <section id="FounderCEO">
+        <h2>Founder & CEO</h2>
+        <p>Meet our visionary Founder and CEO. Learn about their inspiring journey and the driving force behind MKTG Partners' success story.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Get in touch with us at mktgpartners1@gmail.com to explore new business opportunities or to seek more information. Let's create success together!</p>
+    </section>
+
+    <!-- Zusätzliche Abschnitte für längeren Code -->
+    <section id="testimonials" class="custom-section">
+        <h2>Client Testimonials</h2>
+        <p>Discover what our clients say about us. Your success story begins here!</p>
+    </section>
+
+    <section id="team" class="custom-section">
+        <h2>Our Amazing Team</h2>
+        <p>Meet the incredible minds behind our success. United by passion, driven by excellence.</p>
+    </section>
+
+    <!-- Weitere Abschnitte und Inhalte hier -->
+
+    <footer>
+        &copy; 2024 MKTG Partners. All rights reserved.
+    </footer>
 
     <script>
-        // Code für die Navigation und Sektionen
         document.addEventListener('DOMContentLoaded', function() {
-            // Selektieren aller Navigationslinks und Sektionen
             const navLinks = document.querySelectorAll('nav a');
             const sections = document.querySelectorAll('section');
 
-            // Hinzufügen eines Event Listeners für jeden Navigationslink
             navLinks.forEach(link => {
                 link.addEventListener('click', function(event) {
                     event.preventDefault();
                     const targetId = link.getAttribute('href').substring(1);
 
-                    // Überprüfen und Aktivieren der entsprechenden Sektion
                     sections.forEach(section => {
                         if (section.id === targetId) {
                             section.classList.add('active');
@@ -64,7 +91,6 @@
                 });
             });
 
-            // Funktion zur Aktualisierung der aktiven Sektion beim Scrollen
             function updateActiveSection() {
                 sections.forEach(section => {
                     const rect = section.getBoundingClientRect();
@@ -76,7 +102,6 @@
                 });
             }
 
-            // Event Listener für das Scrollen der Seite
             document.addEventListener('scroll', updateActiveSection);
             window.addEventListener('scroll', function() {
                 let currentSectionId = '';
@@ -87,7 +112,6 @@
                     }
                 });
 
-                // Aktivieren des entsprechenden Navigationslinks für die aktive Sektion
                 navLinks.forEach(link => {
                     link.classList.remove('active');
                     if (link.getAttribute('href').substring(1) === currentSectionId) {
