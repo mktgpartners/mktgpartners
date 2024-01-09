@@ -17,6 +17,9 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         header, footer {
@@ -49,6 +52,12 @@
 
         nav a:hover {
             color: #b0bec5;
+        }
+
+        main {
+            flex: 1; /* Fill remaining vertical space */
+            display: flex;
+            flex-direction: column;
         }
 
         section {
@@ -101,6 +110,10 @@
             color: #555;
             font-size: 1.1em;
         }
+
+        footer {
+            margin-top: auto; /* Push footer to the bottom */
+        }
     </style>
 </head>
 <body>
@@ -116,30 +129,32 @@
         <a href="#contact">Contact</a>
     </nav>
 
-    <section id="home" class="active">
-        <h2>Welcome to MKTG Partners</h2>
-        <p>Welcome to MKTG Partners, where your success is our priority. Our dedication to delivering outstanding results is at the core of everything we do. Scroll down to explore more.</p>
-    </section>
+    <main>
+        <section id="home" class="active">
+            <h2>Welcome to MKTG Partners</h2>
+            <p>Welcome to MKTG Partners, where your success is our priority. Our dedication to delivering outstanding results is at the core of everything we do. Scroll down to explore more.</p>
+        </section>
 
-    <section id="about">
-        <h2>About Us</h2>
-        <p>At MKTG Partners, we pride ourselves on our compelling story and the team of exceptional individuals who make our company great. Learn more about our journey and the values we stand for.</p>
-    </section>
+        <section id="about">
+            <h2>About Us</h2>
+            <p>At MKTG Partners, we pride ourselves on our compelling story and the team of exceptional individuals who make our company great. Learn more about our journey and the values we stand for.</p>
+        </section>
 
-    <section id="services">
-        <h2>Our Services</h2>
-        <p>Discover the breadth of services we offer to cater to the diverse needs of our clients. From strategic consulting to creative solutions, we are committed to delivering excellence.</p>
-    </section>
+        <section id="services">
+            <h2>Our Services</h2>
+            <p>Discover the breadth of services we offer to cater to the diverse needs of our clients. From strategic consulting to creative solutions, we are committed to delivering excellence.</p>
+        </section>
 
-    <section id="FounderCEO">
-        <h2>Founder & CEO</h2>
-        <p>Meet our visionary Founder and CEO. Learn about their inspiring journey and the driving force behind MKTG Partners' success story.</p>
-    </section>
+        <section id="FounderCEO">
+            <h2>Founder & CEO</h2>
+            <p>Meet our visionary Founder and CEO. Learn about their inspiring journey and the driving force behind MKTG Partners' success story.</p>
+        </section>
 
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Get in touch with us at mktgpartners1@gmail.com to explore new business opportunities or to seek more information. Let's create success together!</p>
-    </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Get in touch with us at mktgpartners1@gmail.com to explore new business opportunities or to seek more information. Let's create success together!</p>
+        </section>
+    </main>
 
     <footer>
         &copy; 2024 MKTG Partners. All rights reserved.
@@ -197,6 +212,7 @@
     </script>
 </body>
 </html>
+
 
 
 
