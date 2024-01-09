@@ -5,163 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MKTG Partners</title>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f7f7f7;
-            color: #333;
-            line-height: 1.6;
+        /* Grundlegende Stile */
+
+        /* Animationsstil für Sektionseinführung */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        header, footer {
-            background-color: #37474f;
-            color: #fff;
-            padding: 1em;
-            text-align: center;
-            z-index: 2;
-            transition: background-color 0.5s, color 0.5s;
-        }
-
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: #78909c;
-            display: flex;
-            justify-content: center;
-            z-index: 1;
-            transition: top 0.5s;
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            padding: 1em;
-            margin: 0 1em;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: #b0bec5;
-        }
-
+        /* Stil für Sektionen */
         section {
-            padding: 6em 2em;
+            padding: 4em 2em;
             text-align: center;
             margin-top: 60px;
             opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
             background-color: #fff;
             border-bottom: 1px solid #ccc;
-            display: none;
             pointer-events: none;
+            animation: fadeIn 1s ease forwards;
         }
 
-        section.active {
-            opacity: 1;
-            transform: translateY(0);
-            display: block;
-            pointer-events: auto;
-        }
-
-        h1 {
-            margin: 0;
-        }
-
-        h2 {
-            color: #333;
-        }
-
-        p {
-            color: #555;
-            font-size: 1.1em;
-            line-height: 1.8;
-        }
-
-        /* Additional animations */
-        section:nth-child(odd) {
-            background-color: #f9f9f9;
-        }
-
-        section:nth-child(even) {
-            background-color: #e9e9e9;
-        }
-
-        section h2 {
-            font-size: 2em;
-            margin-bottom: 20px;
-            transition: font-size 0.5s, margin-bottom 0.5s;
-        }
-
-        section p {
-            font-size: 1em;
-            transition: font-size 0.5s;
-        }
-
-        section:hover h2 {
-            font-size: 2.2em;
-            margin-bottom: 30px;
-        }
-
-        section:hover p {
-            font-size: 1.1em;
-        }
+        /* Restliche Stile und Code */
+        /* Füge weitere Stile hinzu, falls erforderlich */
     </style>
 </head>
 <body>
-    <header>
-        <h1>MKTG Partners</h1>
-    </header>
-    
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#FounderCEO">Founder & CEO</a>
-        <a href="#contact">Contact</a>
-    </nav>
-
-    <section id="home" class="active">
-        <h2>Welcome to MKTG Partners</h2>
-        <p>Welcome to MKTG Partners, where your success is our priority. Our dedication to delivering outstanding results is at the core of everything we do. Scroll down to explore more.</p>
-    </section>
-
-    <section id="about">
-        <h2>About Us</h2>
-        <p>At MKTG Partners, we pride ourselves on our compelling story and the team of exceptional individuals who make our company great. Our commitment to excellence and innovation drives us forward.</p>
-    </section>
-
-    <section id="services">
-        <h2>Our Services</h2>
-        <p>Discover the breadth of services we offer to cater to the diverse needs of our clients. From strategic consulting to creative solutions, we are dedicated to providing top-notch service and exceeding expectations.</p>
-    </section>
-
-    <section id="FounderCEO">
-        <h2>Founder & CEO</h2>
-        <p>Meet our visionary Founder and CEO. Their passion and vision have been the driving force behind MKTG Partners' success. Learn about their inspiring journey and how it shaped our company.</p>
-    </section>
-
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Get in touch with us at mktgpartners1@gmail.com to explore new business opportunities or seek more information. Let's work together to achieve success!</p>
-    </section>
-
-    <footer>
-        &copy; 2024 MKTG Partners. All rights reserved.
-    </footer>
+    <!-- Header, Navigation, Sektionen und Footer -->
 
     <script>
+        // Code für die Navigation und Sektionen
         document.addEventListener('DOMContentLoaded', function() {
+            // Selektieren aller Navigationslinks und Sektionen
             const navLinks = document.querySelectorAll('nav a');
             const sections = document.querySelectorAll('section');
 
+            // Hinzufügen eines Event Listeners für jeden Navigationslink
             navLinks.forEach(link => {
                 link.addEventListener('click', function(event) {
                     event.preventDefault();
                     const targetId = link.getAttribute('href').substring(1);
 
+                    // Überprüfen und Aktivieren der entsprechenden Sektion
                     sections.forEach(section => {
                         if (section.id === targetId) {
                             section.classList.add('active');
@@ -172,6 +64,7 @@
                 });
             });
 
+            // Funktion zur Aktualisierung der aktiven Sektion beim Scrollen
             function updateActiveSection() {
                 sections.forEach(section => {
                     const rect = section.getBoundingClientRect();
@@ -183,6 +76,7 @@
                 });
             }
 
+            // Event Listener für das Scrollen der Seite
             document.addEventListener('scroll', updateActiveSection);
             window.addEventListener('scroll', function() {
                 let currentSectionId = '';
@@ -193,6 +87,7 @@
                     }
                 });
 
+                // Aktivieren des entsprechenden Navigationslinks für die aktive Sektion
                 navLinks.forEach(link => {
                     link.classList.remove('active');
                     if (link.getAttribute('href').substring(1) === currentSectionId) {
@@ -204,6 +99,7 @@
     </script>
 </body>
 </html>
+
 
 
 
