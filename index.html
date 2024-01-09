@@ -5,86 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MKTG Partners</title>
     <style>
-        /* ... (unveränderte CSS-Regeln) ... */
+        /* ... (dein vorhandener CSS-Code) ... */
+
+        /* Styles für das Informationsfenster */
+        .info-window {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            z-index: 9999;
+        }
+
+        /* Aktive Klasse für das Informationsfenster */
+        .info-window.active {
+            display: block;
+        }
     </style>
 </head>
 <body>
-    <header>
-        <h1>MKTG Partners</h1>
-    </header>
+    <!-- ... (dein vorhandener HTML-Code) ... -->
     
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#FounderCEO">Founder & CEO</a>
-        <a href="#contact">Contact</a>
-    </nav>
+    <!-- Information Fenster für die Sektionen -->
+    <div id="infoHome" class="info-window">
+        <h3>Home Section</h3>
+        <p>Testinformation für die Home-Sektion.</p>
+    </div>
 
-    <main>
-        <!-- ... (unveränderte Sektionen) ... -->
-    </main>
+    <div id="infoAbout" class="info-window">
+        <h3>About Section</h3>
+        <p>Testinformation für die About-Sektion.</p>
+    </div>
 
-    <footer>
-        &copy; 2024 MKTG Partners. All rights reserved.
-    </footer>
+    <div id="infoServices" class="info-window">
+        <h3>Services Section</h3>
+        <p>Testinformation für die Services-Sektion.</p>
+    </div>
+
+    <div id="infoFounderCEO" class="info-window">
+        <h3>Founder & CEO Section</h3>
+        <p>Testinformation für die Founder & CEO-Sektion.</p>
+    </div>
+
+    <div id="infoContact" class="info-window">
+        <h3>Contact Us Section</h3>
+        <p>Testinformation für die Contact Us-Sektion.</p>
+    </div>
 
     <script>
+        // ... (dein vorhandener JavaScript-Code) ...
+
+        // JavaScript für das Anzeigen des Informationsfensters
         document.addEventListener('DOMContentLoaded', function() {
-            const navLinks = document.querySelectorAll('nav a');
-            const sections = document.querySelectorAll('section');
-
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(event) {
-                    event.preventDefault();
-                    const targetId = link.getAttribute('href').substring(1);
-
-                    sections.forEach(section => {
-                        if (section.id === targetId) {
-                            section.classList.add('active');
-                        } else {
-                            section.classList.remove('active');
-                        }
-                    });
+            const infoWindows = document.querySelectorAll('.info-window');
+            sections.forEach((section, index) => {
+                section.addEventListener('click', function() {
+                    infoWindows.forEach(window => window.classList.remove('active'));
+                    infoWindows[index].classList.add('active');
                 });
             });
-
-            function updateActiveSection() {
-                sections.forEach(section => {
-                    const rect = section.getBoundingClientRect();
-                    if (rect.top >= 0 && rect.top <= window.innerHeight * 0.5) {
-                        section.classList.add('active');
-                    } else {
-                        section.classList.remove('active');
-                    }
-                });
-            }
-
-            document.addEventListener('scroll', updateActiveSection);
-
-            window.addEventListener('scroll', function() {
-                let currentSectionId = '';
-                sections.forEach(section => {
-                    const rect = section.getBoundingClientRect();
-                    if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
-                        currentSectionId = section.id;
-                    }
-                });
-
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href').substring(1) === currentSectionId) {
-                        link.classList.add('active');
-                    }
-                });
-            });
-
-            updateActiveSection(); // Um die aktive Sektion beim Laden der Seite zu aktualisieren
         });
     </script>
 </body>
 </html>
-
 
 
 
