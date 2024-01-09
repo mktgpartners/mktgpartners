@@ -122,6 +122,12 @@
             const navLinks = document.querySelectorAll('nav a');
             const sections = document.querySelectorAll('section');
 
+            function showInterestPopup() {
+                alert("Willkommen bei MKTG Partners! Erforschen Sie unsere Website für erstklassige Marketinglösungen.");
+            }
+
+            showInterestPopup();
+
             navLinks.forEach(link => {
                 link.addEventListener('click', function(event) {
                     event.preventDefault();
@@ -165,3 +171,4 @@
     </script>
 </body>
 </html>
+
