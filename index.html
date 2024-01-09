@@ -7,16 +7,14 @@
     <style>
         /* ... (deine bisherigen CSS-Styles) ... */
 
-        /* Neue Animationen für Text */
+        /* Animationen für Text */
         h2, p {
-            opacity: 0;
-            transform: translateY(20px);
             transition: opacity 0.8s ease, transform 0.8s ease;
         }
 
-        section.active h2, section.active p {
-            opacity: 1;
-            transform: translateY(0);
+        section:not(.active) h2, section:not(.active) p {
+            opacity: 0;
+            transform: translateY(20px);
         }
     </style>
 </head>
@@ -35,27 +33,27 @@
 
     <section id="home" class="active">
         <h2>Welcome to MKTG Partners</h2>
-        <p>Welcome to MKTG Partners, where your success is our priority. Our dedication to delivering outstanding results is at the core of everything we do. Scroll down to explore more and discover how we redefine success.</p>
+        <p>Welcome to MKTG Partners, where your success is our priority. Our dedication to delivering outstanding results is at the core of everything we do. Scroll down to explore more.</p>
     </section>
 
     <section id="about">
         <h2>About Us</h2>
-        <p>At MKTG Partners, our story is rich with passion, innovation, and a relentless pursuit of excellence. Dive into our journey to understand our vision and the values that guide us.</p>
+        <p>At MKTG Partners, we pride ourselves on our compelling story and the team of exceptional individuals who make our company great. Learn more about our journey and the values we stand for.</p>
     </section>
 
     <section id="services">
         <h2>Our Services</h2>
-        <p>Discover our comprehensive suite of services, tailored to meet your needs. From groundbreaking strategies to revolutionary solutions, we're committed to exceeding expectations.</p>
+        <p>Discover the breadth of services we offer to cater to the diverse needs of our clients. From strategic consulting to creative solutions, we are committed to delivering excellence.</p>
     </section>
 
     <section id="FounderCEO">
         <h2>Founder & CEO</h2>
-        <p>Meet our visionary Founder and CEO. Their transformative leadership has been the cornerstone of our success, driving innovation and pushing boundaries.</p>
+        <p>Meet our visionary Founder and CEO. Learn about their inspiring journey and the driving force behind MKTG Partners' success story.</p>
     </section>
 
     <section id="contact">
         <h2>Contact Us</h2>
-        <p>Connect with us at mktgpartners1@gmail.com and embark on a journey towards mutual success. Let's forge new partnerships and unlock opportunities together!</p>
+        <p>Get in touch with us at mktgpartners1@gmail.com to explore new business opportunities or to seek more information. Let's create success together!</p>
     </section>
 
     <footer>
@@ -113,4 +111,3 @@
     </script>
 </body>
 </html>
-
