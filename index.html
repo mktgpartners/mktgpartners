@@ -9,21 +9,16 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f7f7f7;
+            background-color: #f0f0f0; /* Ändert Hintergrundfarbe in Grau */
             color: #333;
             line-height: 1.6;
-         
-            background-image: url('bg.jpg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
         }
 
         header, footer {
-            background-color: #37474f;
+            background-color: #3498db; /* Ändert Header- und Footer-Farbe in Blau */
             color: #fff;
             padding: 1em;
             text-align: center;
@@ -35,7 +30,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background-color: #78909c;
+            background-color: #2980b9; /* Ändert Navigationsleistenfarbe in Dunkelblau */
             display: flex;
             justify-content: center;
             z-index: 1;
@@ -51,11 +46,11 @@
         }
 
         nav a:hover {
-            color: #b0bec5;
+            color: #ecf0f1; /* Ändert Hover-Farbe in Grau */
         }
 
         main {
-            flex: 1; /* Fill remaining vertical space */
+            flex: 1;
             display: flex;
             flex-direction: column;
         }
@@ -64,12 +59,12 @@
             padding: 4em 2em;
             text-align: center;
             margin-top: 60px;
+            background-color: #ecf0f1; /* Ändert Abschnittshintergrundfarbe in Hellblau */
+            border-bottom: 1px solid #ccc;
+            pointer-events: none;
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.5s ease, transform 0.5s ease;
-            background-color: #fff;
-            border-bottom: 1px solid #ccc;
-            pointer-events: none;
         }
 
         section.active {
@@ -110,7 +105,7 @@
         }
 
         footer {
-            margin-top: auto; /* Push footer to the bottom */
+            margin-top: auto;
         }
 
         /* New style for information boxes */
