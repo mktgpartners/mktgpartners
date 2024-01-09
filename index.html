@@ -1,15 +1,51 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MKTG Partners</title>
     <style>
-        /* Deine CSS-Stile bleiben unverändert, da sie bereits gut lesbar sind */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
+            line-height: 1.6;
+        }
 
-        /* Verstecke alle Abschnitte außer dem aktiven */
+        header, footer {
+            background-color: #37474f;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+            z-index: 2;
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #78909c;
+            display: flex;
+            justify-content: center;
+            z-index: 1;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 1em;
+            margin: 0 1em;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #b0bec5;
+        }
+
         section {
-            display: none;
             padding: 4em 2em;
             text-align: center;
             margin-top: 60px;
@@ -18,28 +54,38 @@
             transition: opacity 0.5s ease, transform 0.5s ease;
             background-color: #fff;
             border-bottom: 1px solid #ccc;
-            color: #555;
-            font-size: 1.1em;
         }
 
         section.active {
-            display: block;
             opacity: 1;
             transform: translateY(0);
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            color: #555;
+            font-size: 1.1em;
         }
     </style>
 </head>
 <body>
-    <header style="background-color: #37474f; color: #fff; padding: 1em; text-align: center;">
+    <header>
         <h1>MKTG Partners</h1>
     </header>
     
-    <nav style="position: fixed; top: 0; width: 100%; background-color: #78909c; display: flex; justify-content: center; z-index: 1;">
-        <a href="#home" style="color: #fff; text-decoration: none; padding: 1em; margin: 0 1em; transition: color 0.3s ease;">Home</a>
-        <a href="#about" style="color: #fff; text-decoration: none; padding: 1em; margin: 0 1em; transition: color 0.3s ease;">About</a>
-        <a href="#services" style="color: #fff; text-decoration: none; padding: 1em; margin: 0 1em; transition: color 0.3s ease;">Services</a>
-        <a href="#FounderCEO" style="color: #fff; text-decoration: none; padding: 1em; margin: 0 1em; transition: color 0.3s ease;">Founder & CEO</a>
-        <a href="#contact" style="color: #fff; text-decoration: none; padding: 1em; margin: 0 1em; transition: color 0.3s ease;">Contact</a>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#FounderCEO">Founder & CEO</a>
+        <a href="#contact">Contact</a>
     </nav>
 
     <section id="home" class="active">
@@ -67,7 +113,7 @@
         <p>Get in touch with us at mktgpartners1@gmail.com to explore new business opportunities or to seek more information. Let's create success together!</p>
     </section>
 
-    <footer style="background-color: #37474f; color: #fff; padding: 1em; text-align: center;">
+    <footer>
         &copy; 2024 MKTG Partners. All rights reserved.
     </footer>
 
