@@ -68,16 +68,7 @@
         }
 
         section.zoom {
-            animation: zoomEffect 0.5s;
-        }
-
-        @keyframes zoomEffect {
-            from {
-                transform: scale(1);
-            }
-            to {
-                transform: scale(1.1);
-            }
+            transform: scale(1.1);
         }
 
         h1 {
@@ -192,13 +183,14 @@
                     if (rect.top >= 0 && rect.top <= window.innerHeight) {
                         section.classList.add('active');
                     } else {
-                        section.classList.remove('active');
+                        section.classList.remove('active', 'zoom');
                     }
                 });
             });
 
             sections.forEach(section => {
                 section.addEventListener('click', function() {
+                    sections.forEach(s => s.classList.remove('zoom'));
                     this.classList.toggle('zoom');
                 });
             });
@@ -206,4 +198,3 @@
     </script>
 </body>
 </html>
-
