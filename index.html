@@ -19,7 +19,22 @@
             color: #fff;
             line-height: 1.6;
             margin: 0;
-            perspective: 50px; /* Hintergrund in 3D */
+            perspective: 1000px; /* Hintergrund in 3D */
+            background-image: linear-gradient(45deg, #3498db, #8e44ad, #3498db, #8e44ad); /* Hintergrundfarbe */
+            background-size: 400% 400%; /* Größe des Farbverlaufs */
+            animation: gradientBG 15s ease infinite; /* Animation des Farbverlaufs */
+        }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         header {
@@ -65,7 +80,7 @@
             transition: opacity 0.5s ease, transform 0.5s ease, background-color 0.5s; /* Animationen hinzugefügt */
             cursor: pointer;
             transform: translateY(0); /* Position auf 0 geändert */
-            background-color: #fff; /* Hintergrundfarbe für Text */
+            background-color: rgba(255, 255, 255, 0.9); /* Hintergrundfarbe für Text */
             border-radius: 10px; /* Abgerundete Ecken für Abschnitte */
             transform-style: preserve-3d; /* Hintergrund in 3D */
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Schatten für 3D-Effekt */
