@@ -16,10 +16,10 @@
 
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
+            color: #fff;
             line-height: 1.6;
             margin: 0;
+            perspective: 50px; /* Hintergrund in 3D */
         }
 
         header {
@@ -62,11 +62,13 @@
             text-align: center;
             margin-top: 80px;
             opacity: 1; /* Sichtbarkeit auf 1 geändert */
-            transition: opacity 0.5s ease, transform 0.5s ease;
+            transition: opacity 0.5s ease, transform 0.5s ease, background-color 0.5s; /* Animationen hinzugefügt */
             cursor: pointer;
             transform: translateY(0); /* Position auf 0 geändert */
             background-color: #fff; /* Hintergrundfarbe für Text */
             border-radius: 10px; /* Abgerundete Ecken für Abschnitte */
+            transform-style: preserve-3d; /* Hintergrund in 3D */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Schatten für 3D-Effekt */
         }
 
         section.active {
