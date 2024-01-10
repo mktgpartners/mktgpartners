@@ -23,7 +23,7 @@
         }
 
         header {
-            background-color: #3498db;
+            background-image: linear-gradient(to right, #3498db, #8e44ad); /* Verbesserter Farbübergang */
             color: #fff;
             padding: 1em;
             text-align: center;
@@ -71,11 +71,12 @@
             text-decoration: none;
             padding: 1em;
             margin: 0 1em;
-            transition: color 0.3s ease;
+            transition: color 0.3s ease, transform 0.3s ease; /* Verbesserte Hover-Effekte */
         }
 
         nav a:hover {
             color: #ffd700;
+            transform: scale(1.1); /* Vergrößere den Link beim Hovern */
         }
 
         section {
@@ -83,15 +84,14 @@
             text-align: center;
             margin-top: 80px;
             opacity: 0;
-            transition: opacity 0.5s ease;
+            transition: opacity 0.5s ease, transform 0.5s ease; /* Kombiniere Transitionen */
             cursor: pointer;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
+            transform: translateY(50px); /* Anfangszustand für die Abschnitte */
         }
 
         section.active {
             opacity: 1;
-            transform: translateY(0);
+            transform: translateY(0); /* Aktivierung der Abschnitte */
         }
 
         h1 {
