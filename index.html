@@ -61,17 +61,16 @@
             padding: 6em 2em;
             text-align: center;
             margin-top: 80px;
-            opacity: 0;
+            opacity: 1; /* Sichtbarkeit auf 1 geändert */
             transition: opacity 0.5s ease, transform 0.5s ease;
             cursor: pointer;
-            transform: translateY(50px);
+            transform: translateY(0); /* Position auf 0 geändert */
             background-color: #fff; /* Hintergrundfarbe für Text */
             border-radius: 10px; /* Abgerundete Ecken für Abschnitte */
         }
 
         section.active {
-            opacity: 1;
-            transform: translateY(0);
+            display: block; /* Anzeige auf Block geändert */
         }
 
         h2 {
