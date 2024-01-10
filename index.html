@@ -61,24 +61,18 @@
             padding: 6em 2em;
             text-align: center;
             margin-top: 80px;
-            opacity: 1; /* Sichtbarkeit auf 1 geändert */
-            transition: opacity 0.5s ease, transform 0.5s ease;
+            opacity: 1;
+            transition: opacity 0.5s ease, transform 0.5s ease, background-color 0.5s ease;
             cursor: pointer;
-            transform: translateY(0); /* Position auf 0 geändert */
-            background-color: #fff; /* Hintergrundfarbe für Text */
-            border-radius: 10px; /* Abgerundete Ecken für Abschnitte */
-            /* 3D-Effekt */
-            transform-style: preserve-3d;
-            perspective: 1000px;
-            transition: transform 0.5s ease;
+            transform: scale(1);
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         section:hover {
-            transform: rotateX(10deg) rotateY(10deg);
-        }
-
-        section.active {
-            display: block; /* Anzeige auf Block geändert */
+            transform: scale(1.03);
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
         }
 
         h2 {
@@ -86,12 +80,22 @@
             font-size: 2em;
             margin-bottom: 0.5em;
             text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        section:hover h2 {
+            color: #8e44ad;
         }
 
         p {
-            color: #333; /* Dunkle Textfarbe für bessere Lesbarkeit */
+            color: #333;
             font-size: 1.2em;
             line-height: 1.8;
+            transition: color 0.3s ease;
+        }
+
+        section:hover p {
+            color: #555;
         }
 
         footer {
@@ -175,3 +179,4 @@
     </script>
 </body>
 </html>
+
