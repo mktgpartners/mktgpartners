@@ -102,6 +102,26 @@
             z-index: 1;
             transition: background-color 0.5s;
         }
+
+        /* Neuer Code beginnt hier */
+        header h1::after {
+            content: "";
+            display: none;
+            transition: display 0.5s, font-size 0.5s, margin-top 0.5s;
+        }
+        header:hover h1::after {
+            content: " - Your Strategic Partner in Marketing";
+            display: block;
+            font-size: 0.8em;
+            margin-top: 0.5em;
+        }
+        header:hover {
+            transform: scale(1.1);
+        }
+        header {
+            transition: transform 0.5s, color 0.5s;
+        }
+        /* Neuer Code endet hier */
     </style>
 </head>
 <body>
