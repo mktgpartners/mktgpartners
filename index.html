@@ -54,17 +54,16 @@
             text-align: center;
             margin-top: 80px;
             opacity: 0;
-            transform: translateY(20px);
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.5s ease;
+            transition: opacity 0.5s ease;
             cursor: pointer;
+            border: none;
+            box-shadow: none;
+            border-radius: 0;
+            transform: none;
         }
 
         section.active {
             opacity: 1;
-            transform: translateY(0);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
         section.zoom {
