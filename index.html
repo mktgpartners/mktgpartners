@@ -23,7 +23,7 @@
         }
 
         header {
-            background-image: linear-gradient(to right, #3498db, #8e44ad); /* Verbesserter Farbübergang */
+            background-image: linear-gradient(to right, #3498db, #8e44ad);
             color: #fff;
             padding: 1em;
             text-align: center;
@@ -32,26 +32,7 @@
             transition: background-color 0.5s, color 0.5s, transform 0.5s;
             position: relative;
             overflow: hidden;
-        }
-
-        header::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 200%;
-            transform: translateX(-50%);
-            height: 3px;
-            background: rgba(255, 255, 255, 0.5);
-            transition: width 0.3s ease;
-        }
-
-        header:hover::after {
-            width: 100%;
-        }
-
-        header:hover {
-            transform: scale(1.05);
+            display: none; /* Titel in der dunkelblauen Bar ausblenden */
         }
 
         nav {
@@ -71,12 +52,12 @@
             text-decoration: none;
             padding: 1em;
             margin: 0 1em;
-            transition: color 0.3s ease, transform 0.3s ease; /* Verbesserte Hover-Effekte */
+            transition: color 0.3s ease, transform 0.3s ease;
         }
 
         nav a:hover {
             color: #ffd700;
-            transform: scale(1.1); /* Vergrößere den Link beim Hovern */
+            transform: scale(1.1);
         }
 
         section {
@@ -84,22 +65,14 @@
             text-align: center;
             margin-top: 80px;
             opacity: 0;
-            transition: opacity 0.5s ease, transform 0.5s ease; /* Kombiniere Transitionen */
+            transition: opacity 0.5s ease, transform 0.5s ease;
             cursor: pointer;
-            transform: translateY(50px); /* Anfangszustand für die Abschnitte */
+            transform: translateY(50px);
         }
 
         section.active {
             opacity: 1;
-            transform: translateY(0); /* Aktivierung der Abschnitte */
-        }
-
-        h1 {
-            margin: 0;
-            font-size: 3em;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            position: relative;
+            transform: translateY(0);
         }
 
         h2 {
@@ -127,10 +100,6 @@
     </style>
 </head>
 <body>
-    <header>
-        <h1>MKTG Partners</h1>
-    </header>
-    
     <nav>
         <a href="#home">Home</a>
         <a href="#about">About</a>
@@ -142,6 +111,7 @@
     <section id="home" class="active">
         <h2>Welcome to MKTG Partners</h2>
         <p>Your success is our priority. Scroll down to explore more.</p>
+        <p>Dummy text to extend the section. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget mauris nec mi tempor tincidunt. Donec efficitur massa quis elit vehicula, sed pharetra nunc iaculis. Nullam at mi vitae libero pretium volutpat.</p>
     </section>
 
     <section id="about">
@@ -149,6 +119,7 @@
         <p>Discover the story behind our company and the talented individuals who make it great.</p>
         <p>We believe in transparency, integrity, and continuous improvement. Our diverse team brings together creativity and expertise to deliver outstanding results.</p>
         <p>At MKTG Partners, we go beyond meeting expectations; we exceed them. We are not just a marketing agency; we are your strategic partner in growth and success.</p>
+        <p>Dummy text to extend the section. Duis vel urna eget purus tempus vulputate a ut nulla. Sed nec lectus at nisi condimentum euismod a nec lectus.</p>
     </section>
 
     <section id="services">
@@ -156,6 +127,7 @@
         <p>Unlock the full potential of your brand with MKTG Partners' comprehensive range of services.</p>
         <p>From strategic marketing planning to creative content development and impactful digital campaigns, we offer solutions tailored to your unique needs.</p>
         <p>Whether you're a startup or an established business, our flexible and client-focused services are designed to elevate your brand. Experience the MKTG Partners difference and achieve your marketing goals with us.</p>
+        <p>Dummy text to extend the section. Proin vehicula, justo eget posuere accumsan, odio tortor fermentum turpis, non posuere ex est id odio. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin eget risus quis nunc iaculis mattis ac id justo.</p>
     </section>
 
     <section id="FounderCEO">
@@ -163,6 +135,7 @@
         <p>Meet the visionary behind MKTG Partners, our Founder & CEO.</p>
         <p>With a wealth of experience and a passion for innovation, our leader has steered the company to success. Our Founder & CEO sets the tone for a culture of creativity, integrity, and results-driven performance.</p>
         <p>Scroll down to get to know more about our leadership and the values that drive us towards excellence.</p>
+        <p>Dummy text to extend the section. Sed nec lectus at nisi condimentum euismod a nec lectus. Vivamus nec nulla ac purus efficitur pellentesque. Vivamus lacinia facilisis elit, eu auctor nisi congue in. Nam nec purus sed leo bibendum lacinia. Proin eget risus quis nunc iaculis mattis ac id justo.</p>
     </section>
 
     <section id="contact">
@@ -170,10 +143,25 @@
         <p>If you want to make business or need more information, contact us at our email mktgpartners1@gmail.com. Let's make business!</p>
         <p>Embark on a journey of success with MKTG Partners, where we turn your business goals into reality. Our mission is to propel your brand to new heights through innovative marketing strategies and unparalleled dedication.</p>
         <p>At MKTG Partners, we believe in the power of creativity and strategic thinking. Our team of experts is committed to providing tailor-made solutions that resonate with your audience and drive measurable results. Scroll down to explore the possibilities!</p>
+        <p>Dummy text to extend the section. Integer placerat libero id diam facilisis, vel varius ipsum consequat. Ut efficitur purus quis augue vulputate, et rhoncus lectus maximus. Curabitur at leo nec est lobortis hendrerit ac in libero.</p>
     </section>
 
     <footer>
         &copy; 2024 MKTG Partners. All rights reserved.
     </footer>
+
+    <script>
+        // JavaScript zum Ein- und Ausblenden des Headers bei Scrollen
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            const scrollPosition = window.scrollY;
+
+            if (scrollPosition > 100) {
+                header.style.display = 'block';
+            } else {
+                header.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>
