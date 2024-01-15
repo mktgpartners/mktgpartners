@@ -36,22 +36,13 @@
             z-index: 2;
         }
 
-      /* ... (vorheriger CSS-Code) ... */
-
-nav {
-    position: fixed; /* Änderung: fixed statt relative */
-    top: 0; /* Hinzugefügt: fixiert die Navigationsleiste oben */
-    left: 0; /* Hinzugefügt: fixiert die Navigationsleiste links */
-    width: 100%; /* Hinzugefügt: nimmt die volle Breite des Bildschirms ein */
-    display: flex;
-    justify-content: center;
-    border-bottom: 1px solid #3498db;
-    z-index: 2;
-    background-color: #2980b9;
-}
-
-/* ... (weiterer CSS-Code) ... */
-
+        nav {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            border-bottom: 1px solid #3498db;
+            z-index: 2;
+            background-color: #2980b9;
         }
 
         nav a {
@@ -216,4 +207,3 @@ Together, let's sculpt a digital narrative that not only captivates your audienc
 </body>
 
 </html>
-
