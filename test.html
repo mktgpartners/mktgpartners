@@ -16,12 +16,11 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f5f5f5;
             color: #333;
             line-height: 1.6;
             margin: 0;
-            overflow-x: hidden; /* Verhindert den horizontalen Scrollbalken */
         }
 
         header {
@@ -38,6 +37,10 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+        }
+
+        header img {
+            max-width: 80px;
         }
 
         nav {
@@ -118,11 +121,25 @@
             border-top-right-radius: 10px;
             transition: background-color 0.5s;
         }
+
+        /* Image Styles */
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: transform 0.5s ease;
+        }
+
+        section:hover img {
+            transform: scale(1.1);
+        }
     </style>
 </head>
 
 <body>
     <header>
+        <img src="https://via.placeholder.com/150" alt="MKTG Partners Logo">
     </header>
 
     <nav>
@@ -135,33 +152,32 @@
 
     <section id="home" class="active">
         <h2>Welcome to MKTG Partners</h2>
-        <p>Greetings from MKTG Partners, the starting point for a prosperous internet presence! We specialize in Social Media and Paid Advertising Management to unlock the full potential of your brand's online exposure. Explore our offerings and embark on a thrilling digital adventure towards success!</p>
+        <p>Greetings from MKTG Partners, the starting point for a prosperous internet presence! We specialize in Social Media and Paid Advertising Management to unlock the full potential of your brand's online presence. Let's embark on this thrilling digital adventure together where our goal is your success!</p>
+        <img src="https://img.freepik.com/free-photo/young-businesswoman-with-co-workers_1098-1776.jpg?size=626&ext=jpg&ga=GA1.1.1412446893.1704758400&semt=ais" alt="Welcome Image">
     </section>
 
     <section id="about">
         <h2>About Us And Our Mission</h2>
-        <p>Discover the story behind our company and the talented individuals who make it great. At MKTG Partners, we believe in transparency, integrity, and continuous improvement. Our diverse team brings together creativity and expertise to exceed your expectations.</p>
+        <p>Discover the story behind our company and the talented individuals who make it great. At MKTG Partners, we go beyond meeting expectations; we exceed them. We are your strategic partner in growth and success.</p>
+        <img src="https://via.placeholder.com/400" alt="About Us Image">
     </section>
 
     <section id="services">
         <h2>Our Services</h2>
-        <p>In the realm of Social Media Management, our dedicated team crafts a bespoke strategy for your brand across platforms like Facebook, Instagram, LinkedIn, and Twitter. On the Paid Advertising front, we go beyond traditional approaches, leveraging advanced techniques to optimize your advertising spend. Let's sculpt a digital narrative that captivates your audience and propels your brand towards unprecedented success.</p>
+        <p>In the realm of Social Media Management, our dedicated team crafts a bespoke strategy for your brand across platforms like Facebook, Instagram, LinkedIn, and Twitter. We ensure every penny contributes to your brand's growth.</p>
+        <img src="https://via.placeholder.com/400" alt="Services Image">
     </section>
 
     <section id="FounderCEO">
         <h2>Founder & CEO - Cohen Pert</h2>
-        <p>Welcome to MKTG Partners, where visionary leadership meets digital innovation under the guidance of our Founder & CEO, Cohen Pert. His forward-thinking approach shapes our dedication to delivering top-notch solutions, propelling MKTG Partners to innovate and excel in the ever-evolving world of marketing.</p>
-        <h3>Leadership Highlights:</h3>
-        <p>Cohen Pert ensures our agency's dynamic leadership and excellence, innovating marketing solutions for our diverse clientele.</p>
-        <h3>Industry Expertise:</h3>
-        <p>Cohen Pert's profound understanding tailors strategies to meet and exceed the unique needs of our clients across various industries.</p>
-        <h3>Mission-Driven Leadership:</h3>
-        <p>Cohen Pert is committed to MKTG Partners' mission – empowering brands through strategic marketing partnerships. Join us on an exciting journey of possibilities and impactful partnerships.</p>
+        <p>Welcome to MKTG Partners, where visionary leadership meets digital innovation under the guidance of our Founder & CEO, Cohen Pert.</p>
+        <img src="https://via.placeholder.com/400" alt="Founder & CEO - Cohen Pert Image">
     </section>
 
     <section id="contact">
         <h2>Contact Us</h2>
-        <p>If you want to make business or need more information, contact us at our email mktgpartners1@gmail.com. Let's make business! Embark on a journey of success with MKTG Partners, where creativity and strategic thinking drive measurable results. Scroll down to explore the possibilities!</p>
+        <p>Contact us at mktgpartners1@gmail.com. Let's make business and turn your goals into reality.</p>
+        <img src="https://via.placeholder.com/400" alt="Contact Us Image">
     </section>
 
     <footer>
